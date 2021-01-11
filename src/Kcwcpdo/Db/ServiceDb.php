@@ -102,12 +102,7 @@ class ServiceDbController
                 $result->execute($req->post["param"]);
                 $lastId = $db->lastInsertId();
                 $rep->end(json_encode(["code" => 200, "data" => $lastId, "msg" => "Ok"]));
-            } elseif (stristr($req->post["sql"], 'UPDATE')) {
-                $result = $db->prepareSql($req->post["sql"]);
-                $result->execute($req->post["param"]);
-                $affected2 = $result->rowCount();
-                $rep->end(json_encode(["code" => 200, "data" => $affected2, "msg" => "Ok"]));
-            } elseif (stristr($req->post["sql"], 'DELETE')) {
+            } elseif (stristr($req->post["sql"], 'UPDATE') || stristr($req->post["sql"], 'DELETE')) {
                 $result = $db->prepareSql($req->post["sql"]);
                 $result->execute($req->post["param"]);
                 $affected2 = $result->rowCount();
