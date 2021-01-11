@@ -1,0 +1,25 @@
+{
+    "name": "kcwcpdo/db",
+    "description": "php 操作mysql pdo方式类",
+    "type": "yes",
+    "license": "无",
+    "authors": [
+        {
+            "name": "zhangyunhua",
+            "email": "3059543@qq.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        
+    },
+      "autoload": {
+      "psr-4": {
+        "Kcwcpdo\\Db\\": "src/Kcwcpdo/Db"
+      }
+    }
+  
+    
+}
+
+ 
